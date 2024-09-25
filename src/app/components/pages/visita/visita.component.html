@@ -1,0 +1,77 @@
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+    <!-- Position Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef>Número</th>
+      <td mat-cell *matCellDef="let element">{{element.id}}</td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef>Nome</th>
+      <td mat-cell *matCellDef="let element">{{element.nome}}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="cpf">
+      <th mat-header-cell *matHeaderCellDef>CPF</th>
+      <td mat-cell *matCellDef="let element">{{element.cpf}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="destino">
+      <th mat-header-cell *matHeaderCellDef>Destino</th>
+      <td mat-cell *matCellDef="let element">{{element.destino}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="nomeRecebedor">
+      <th mat-header-cell *matHeaderCellDef>Quem Recebeu</th>
+      <td mat-cell *matCellDef="let element">{{element.nomeRecebedor}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="origem">
+      <th mat-header-cell *matHeaderCellDef>Origem</th>
+      <td mat-cell *matCellDef="let element">{{element.origem}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="data">
+      <th mat-header-cell *matHeaderCellDef>Data</th>
+      <td mat-cell *matCellDef="let element">{{element.data}}</td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="hora">
+      <th mat-header-cell *matHeaderCellDef>Hora</th>
+      <td mat-cell *matCellDef="let element">{{element.hora}}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row (click)="clickedRows.add(row)" [class.demo-row-is-clicked]="clickedRows.has(row)"
+    *matRowDef="let row; columns: displayedColumns;"></tr>
+
+  </table>
+
+  <div>
+    <mat-paginator  [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons aria-label="Selecione a página de visitantes">
+    </mat-paginator>
+  </div>
+</div>
+
+<div>
+  <h3>
+    Click Log
+  </h3>
+</div>
+
+<div *ngIf="!clickedRows.size">
+  Clicked rows will be logged here
+</div>
+
+<ul>
+  <li *ngFor="let clickedRow of clickedRows">
+    Clicked on {{clickedRow.nome}}
+  </li>
+</ul>
