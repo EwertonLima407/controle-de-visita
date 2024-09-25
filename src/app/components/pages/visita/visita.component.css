@@ -16,3 +16,7 @@
 .demo-row-is-clicked {
   font-weight: bold;
 }
+.mat-header{
+  font-size: 15px;
+  font-weight: bold;
+}

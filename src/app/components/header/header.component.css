@@ -2,8 +2,8 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 2em;
-  border-bottom: 1px solid #78767c;
-  background-color: #78767c;
+  border-bottom: 1px solid #adadad;
+  background-color: #adadad;
 }
 
 .brand,

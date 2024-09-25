@@ -4,15 +4,15 @@
   margin: 0;
   font-family: Cambria;
   box-sizing: border-box;
-  color: #444;
+  color: #272727;
 }
 a {
   text-decoration: none;
-  color: #444;
+  color: #272727;
   transition: 0.4s;
 }
 a:hover {
-  color: #97aec9;
+  color: #f1e6e2;
 }
 
 html, body { height: 100%; }
